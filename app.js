@@ -16,6 +16,7 @@ form.addEventListener("submit", (event) => {
       score += 25;
     }
   });
+  scrollTo(0, 0); // to scroll up to automatically to show the result after pressing submit but before the result shows up
   result.querySelector("span").textContent = `${score} %`;
   result.classList.remove("d-none"); // because the score is invisible before the submit,we need to delete the hiding class prop
 });
