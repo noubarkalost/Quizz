@@ -1,5 +1,6 @@
 const correctAnswers = ["B", "B", "A", "A"];
 const form = document.querySelector(".quizz-form");
+const result = document.querySelector(".result");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,5 +16,6 @@ form.addEventListener("submit", (event) => {
       score += 25;
     }
   });
-  console.log(score);
+  result.querySelector("span").textContent = `${score} %`;
+  result.classList.remove("d-none"); // because the score is invisible before the submit,we need to delete the hiding class prop
 });
