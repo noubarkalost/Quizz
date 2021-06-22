@@ -17,6 +17,16 @@ form.addEventListener("submit", (event) => {
     }
   });
   scrollTo(0, 0); // to scroll up to automatically to show the result after pressing submit but before the result shows up
-  result.querySelector("span").textContent = `${score} %`;
+
   result.classList.remove("d-none"); // because the score is invisible before the submit,we need to delete the hiding class prop
+  let output = 0;
+  const timer = setInterval(() => {
+    // to animate the score
+    result.querySelector("span").textContent = `${output} %`;
+    if (output === score) {
+      clearInterval(timer);
+    } else {
+      output++;
+    }
+  }, 10);
 });
